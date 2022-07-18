@@ -89,6 +89,11 @@ export class AuthorizationService {
             authRequest.metadata = request.data.metadata;
         }
 
+        if (JSON.parse(request.data.metadata).binding_message) {
+            authRequest.binding_message = JSON.parse(request.data.metadata).binding_message;
+        }
+
+
         return authRequest;
     }
 
@@ -161,6 +166,13 @@ export class AuthorizationService {
 
             return JSON.stringify({res: result, data: authRequest});
         });
+    }
+
+    public static addApprovedAccountIds(
+        authData: any, approvedAccountIds: any[]
+    ){
+        authData.metadata = JSON.stringify(approvedAccountIds);
+        return authData;
     }
 
 }

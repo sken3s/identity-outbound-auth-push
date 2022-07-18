@@ -16,28 +16,15 @@
  * under the License.
  */
 
-import {DateTimeInterface} from "./date-time";
-
 /**
- * Interface for authentication requests.
+ * Interface for the consent.
  */
-export interface AuthRequestInterface {
-    deviceId: string;
-    challenge: string;
-    sessionDataKey: string;
-    connectionCode?: string;
-    displayName?: string;
-    username: string;
-    organization: string;
-    applicationName?: string;
-    applicationUrl?: string;
-    deviceName?: string;
-    binding_message?: string;
-    browserName?: string;
-    ipAddress?: string;
-    location?: string;
-    expiryTime?: string;
-    authenticationStatus?: string;
-    requestTime?: DateTimeInterface;
-    metadata?: string;
+ export interface ConsentInterface {
+    permissions: any[];
+    expiration: {};
+    appliation: string;
+    accounts: string;
+    approvedAccountIds: any[];
+    type: string;
+    additionalInformation: string;
 }
