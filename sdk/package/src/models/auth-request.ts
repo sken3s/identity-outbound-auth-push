@@ -32,6 +32,7 @@ export interface AuthRequestInterface {
     applicationName?: string;
     applicationUrl?: string;
     deviceName?: string;
+    binding_message?: string;
     browserName?: string;
     ipAddress?: string;
     location?: string;

@@ -88,8 +88,11 @@ export class AuthorizationService {
         if (request.data.metadata) {
             authRequest.metadata = request.data.metadata;
         }
+  
+        if (JSON.parse(request.data.metadata).binding_message) {
+            authRequest.binding_message = JSON.parse(request.data.metadata).binding_message;
+        }
 
-        
 
         return authRequest;
     }
